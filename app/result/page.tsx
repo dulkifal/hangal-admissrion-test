@@ -15,6 +15,7 @@ export default function Result() {
             
 
                 <table className={styles.table}>
+                    <tbody>
                     <tr>
                         <th>Reg.No : </th>
                         <th> Name : </th>
@@ -26,7 +27,7 @@ export default function Result() {
                         <td>Pass</td>
                         
                     </tr>
-
+</tbody>
 
                 </table>
 

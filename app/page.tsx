@@ -26,7 +26,7 @@ export default function Home() {
 
         <div className={styles.card}>
          
-          <legend>AT0001-AT2000</legend>
+          <h3>Check Your Result</h3>
           <div className={styles.field}>
             
             <input type="text" id="name" placeholder='Reg.NO' />
@@ -36,6 +36,7 @@ export default function Home() {
             </a>
             
           </button>
+          
           </div>
           </div>
         
