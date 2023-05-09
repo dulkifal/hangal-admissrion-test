@@ -1,12 +1,18 @@
+'use client'
 import Image from 'next/image'
 import styles from './page.module.css'
-
+ 
+import data from '../public/result.json' ;
+import { useState } from 'react';
 export default function Home() {
+
+  const [reg, setReg] = useState('')
+  
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-         Admission Test Result &nbsp;
+        ENTRANCE EXAM RESULT&nbsp;
           <code className={styles.code}>2023-24</code>
         </p>
         <div>
@@ -28,10 +34,14 @@ export default function Home() {
          
           <h3>Check Your Result</h3>
           <div className={styles.field}>
+            <input type="text" placeholder='Reg.No' onChange={(e)=>
+              setReg(e.target.value)
+            }  />
             
-            <input type="text" id="name" placeholder='Reg.NO' />
-          <button>
-            <a href="/result">
+        
+         
+          <button >
+            <a href={`/result?reg=${reg}`}>
               Submit
             </a>
             

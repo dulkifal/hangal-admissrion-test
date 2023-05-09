@@ -1,11 +1,21 @@
+"use client"
 import styles from '../page.module.css'
-
+import data from '../../public/result.json' ;
+import { useSearchParams } from 'next/navigation';
+ 
 export default function Result() {
+// save query that passed    
+const searchParams = useSearchParams();
+ 
+ const reg =  searchParams.get('reg') || ''
+  
+  const result = data[reg]
+  
     return (
         <main className={styles.main}>
             <div className={styles.description}>
                 <p>
-                    Admission Test Result &nbsp;
+                ENTRANCE EXAM RESULT &nbsp;
                     <code className={styles.code}>2023-24</code>
                 </p>
                 
@@ -22,9 +32,9 @@ export default function Result() {
                         <th>Result : </th>
                     </tr>
                     <tr>
-                        <td>AT0001</td>
-                        <td>Abdul Haseeb Rasz </td>
-                        <td>Pass</td>
+                        <td>{reg}</td>
+                        <td>{result.name} </td>
+                        <td>{result.result}</td>
                         
                     </tr>
 </tbody>
