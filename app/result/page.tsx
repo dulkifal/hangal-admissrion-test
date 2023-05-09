@@ -1,15 +1,16 @@
 "use client"
 import styles from '../page.module.css'
-import data from '../../public/result.json' ;
+import data  from '../../public/result.json' ;
 import { useSearchParams } from 'next/navigation';
  
 export default function Result() {
 // save query that passed    
 const searchParams = useSearchParams();
+const myData :  { [key: string]: any } = data
  
  const reg =  searchParams.get('reg') || ''
   
-  const result = data[reg]
+  const result = myData[reg]
   
     return (
         <main className={styles.main}>
