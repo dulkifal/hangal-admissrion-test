@@ -11,15 +11,14 @@ export default function Result() {
                 
             </div>
 
-
             <div className={styles.result}>
             
 
                 <table className={styles.table}>
                     <tr>
-                        <th>Reg.No</th>
-                        <th> Name</th>
-                        <th>Result</th>
+                        <th>Reg.No : </th>
+                        <th> Name : </th>
+                        <th>Result : </th>
                     </tr>
                     <tr>
                         <td>AT0001</td>
@@ -35,11 +34,20 @@ export default function Result() {
 
 
             </div>
+            <div>
 
-
-            <div className={styles.grid}>
-                
             </div>
+            <div className={styles.foot}>
+                <p>Contact for more information : 
+                    <br /> <a href="tel: +91 94488 29021">+91 94488 29021</a>
+                   
+                </p>
+
+            </div>
+
+
+
+             
         </main>
 
     )
