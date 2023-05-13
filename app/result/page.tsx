@@ -24,7 +24,6 @@ export default function Result() {
 
             <div className={styles.result}>
 
-
                 <div className={styles.table}>
 
 
