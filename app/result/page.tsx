@@ -1,46 +1,54 @@
 "use client"
 import styles from '../page.module.css'
-import data  from '../../public/result.json' ;
+import data from '../../public/result.json';
 import { useSearchParams } from 'next/navigation';
- 
+
 export default function Result() {
-// save query that passed    
-const searchParams = useSearchParams();
-const myData :  { [key: string]: any } = data
- 
- const reg =  searchParams.get('reg') || ''
-  
-  const result = myData[reg]
-  
+    // save query that passed    
+    const searchParams = useSearchParams();
+    const myData: { [key: string]: any } = data
+
+    const reg = searchParams.get('reg') || ''
+
+    const result = myData[reg]
+
     return (
         <main className={styles.main}>
             <div className={styles.description}>
                 <p>
-                ENTRANCE EXAM RESULT &nbsp;
+                    ENTRANCE EXAM RESULT &nbsp;
                     <code className={styles.code}>2023-24</code>
                 </p>
-                
+
             </div>
 
             <div className={styles.result}>
-            
 
-                <table className={styles.table}>
-                    <tbody>
-                    <tr>
-                        <th>Reg.No : </th>
-                        <th> Name : </th>
-                        <th>Result : </th>
-                    </tr>
-                    <tr>
-                        <td>{reg}</td>
-                        <td>{result.name} </td>
-                        <td>{result.result}</td>
-                        
-                    </tr>
-</tbody>
 
-                </table>
+                <div className={styles.table}>
+
+
+                    {
+                        result == null ? <p> Please Enter a valid Reg.No </p> : null
+                    }
+                    <table >
+                        <tbody>
+                            <tr>
+                                <th>Reg.No : </th>
+                                <th> Name : </th>
+                                <th>Result : </th>
+                            </tr>
+                            <tr>
+                                <td>{reg}</td>
+                                <td>{result?.name} </td>
+                                <td>{result?.result}</td>
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
 
 
 
@@ -50,16 +58,16 @@ const myData :  { [key: string]: any } = data
 
             </div>
             <div className={styles.foot}>
-                <p>Contact for more information : 
+                <p>Contact for more information :
                     <br /> <a href="tel: +91 94488 29021">+91 94488 29021</a>
-                   
+
                 </p>
 
             </div>
 
 
 
-             
+
         </main>
 
     )

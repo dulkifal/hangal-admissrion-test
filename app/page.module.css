@@ -1,5 +1,5 @@
 .main {
-  background-image: url("/public/campus.jpg");
+  /* background-image: url("/public/campus.jpg"); */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -114,6 +114,10 @@
   
   
 }
+.table p{
+  text-align: center;
+}
+
 .table tr { display: block; float: left; 
   
 }
